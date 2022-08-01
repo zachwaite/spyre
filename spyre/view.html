@@ -140,13 +140,13 @@
 				{%- if output['type']=='plot' %}
 					// load plot function
 					function {{output['id']}}(){
-						var spinning_wheel = $("<img />").attr('src', "{{prefix}}/spinning_wheel");
+						var spinning_wheel = $("<img />").attr('src', "{{ prefix }}/spinning_wheel");
 						$("#{{output['id']}}").html(spinning_wheel);
 
 						var params = updateSharedParameters();
 						params = params+"output_id={{output['id']}}&";
 						
-						var plot = $("<img />").attr('src', "plot?"+params).load(function(){
+						var plot = $("<img />").attr('src', "{{ prefix }}/plot?"+params).load(function(){
 							$("#{{output['id']}}").html("");
 							$("#{{output['id']}}").append(plot)
 						});
@@ -172,7 +172,7 @@
 						var params = updateSharedParameters();
 						params = params+"output_id={{output['id']}}&";
 						$.ajax({
-							url : "html?"+params,
+							url : "{{ prefix }}/html?"+params,
 							success: function(response, textStatus, jqXHR){
 								$("#{{output['id']}}").html(response);
 							}
@@ -190,7 +190,7 @@
 						params = params+"output_id={{output['id']}}&";
 						$.ajax({
 							type: 'GET',
-							url : "table?"+params
+							url : "{{ prefix }}/table?"+params
 						}).done(function(response){
 							$("#{{output['id']}}").html(response);
 							{%- if output['sortable'] is defined %}

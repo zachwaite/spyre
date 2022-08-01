@@ -1,9 +1,9 @@
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import matplotlib
-# from StringIO import StringIO
 import io
 import logging
+
+import matplotlib
+import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
 
 
 class Plot:

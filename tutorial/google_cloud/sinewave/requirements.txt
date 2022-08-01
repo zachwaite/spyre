@@ -1,4 +1,0 @@
-numpy
-pandas
-matplotlib
-DataSpyre==0.2.6

@@ -172,5 +172,5 @@ class TestApp(server.App):
         return 0
 
 
-# app = TestApp()
-# app.launch()
+app = TestApp()
+app.launch()
